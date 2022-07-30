@@ -114,6 +114,14 @@ export interface LaravelProps {
 * @default - A new security group is created.
 */
   readonly albSecruityGroup?: ec2.ISecurityGroup;
+
+
+  /**
+* EcrRepository Version
+*
+* @default - latest
+*/
+  readonly imageVersion?: string;
 }
 
 export class LaravelService extends cdk.Construct {
@@ -138,7 +146,7 @@ export class LaravelService extends cdk.Construct {
     var image = null;
     if (props.fromRegistry) {
       const repos = ecr.Repository.fromRepositoryName(this, 'from-arn', props.code);
-      image = ecs.ContainerImage.fromEcrRepository(repos, 'latest');
+      image = ecs.ContainerImage.fromEcrRepository(repos, props.imageVersion && props.imageVersion.length > 0 ? props.imageVersion : 'latest');
     } else {
       image = ecs.ContainerImage.fromAsset(props.code);
     }

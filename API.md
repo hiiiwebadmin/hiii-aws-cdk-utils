@@ -1879,6 +1879,7 @@ const laravelProps: LaravelProps = { ... }
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.fargateTaskDefinitionProps">fargateTaskDefinitionProps</a></code> | <code>@aws-cdk/aws-ecs.FargateTaskDefinitionProps</code> | https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-cpu-memory-error.html. |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.healthCheckCode">healthCheckCode</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.healthCheckPath">healthCheckPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.imageVersion">imageVersion</a></code> | <code>string</code> | EcrRepository Version. |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.internalAlbIdleTimeout">internalAlbIdleTimeout</a></code> | <code>@aws-cdk/core.Duration</code> | The internal load balancer idle timeout, in seconds. |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.internalAlbName">internalAlbName</a></code> | <code>string</code> | Set Up The internal ALB Name. |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.logGroupName">logGroupName</a></code> | <code>string</code> | Set Log Group Name. |
@@ -2085,6 +2086,19 @@ public readonly healthCheckPath: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `imageVersion`<sup>Optional</sup> <a name="imageVersion" id="hiii-aws-cdk-utils.LaravelProps.property.imageVersion"></a>
+
+```typescript
+public readonly imageVersion: string;
+```
+
+- *Type:* string
+- *Default:* latest
+
+EcrRepository Version.
 
 ---
 
