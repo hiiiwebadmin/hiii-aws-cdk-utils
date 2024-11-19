@@ -122,6 +122,15 @@ export interface LaravelProps {
 * @default - latest
 */
   readonly imageVersion?: string;
+
+  /**
+     * The command that is passed to the container.
+     *
+     * If you provide a shell command as a single string, you have to quote command-line arguments.
+     *
+     * @default - CMD value built into container image.
+     */
+  readonly commands?: string[];
 }
 
 export class LaravelService extends cdk.Construct {
@@ -131,7 +140,7 @@ export class LaravelService extends cdk.Construct {
     super(scope, id);
 
     this.vpc = props.vpc ?? getOrCreateVpc(this);
-
+    const commands = props.commands ?? [];
     const logGroup = new logs.LogGroup(this, 'LogGroup', {
       logGroupName: props.logGroupName,
       retention: logs.RetentionDays.ONE_MONTH,
@@ -143,7 +152,7 @@ export class LaravelService extends cdk.Construct {
       memoryLimitMiB: 1024,
     });
 
-    var image = null;
+    var image;
     if (props.fromRegistry) {
       const repos = ecr.Repository.fromRepositoryName(this, 'from-arn', props.code);
       image = ecs.ContainerImage.fromEcrRepository(repos, props.imageVersion && props.imageVersion.length > 0 ? props.imageVersion : 'latest');
@@ -160,6 +169,7 @@ export class LaravelService extends cdk.Construct {
         logGroup,
       }),
       secrets: props.secretEnvironment,
+      command: commands
     });
 
     printOutput(this, 'HiiiFromRegistry - ', String(props.fromRegistry));
