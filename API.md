@@ -1085,7 +1085,7 @@ public readonly vpcSubnets: SubnetSelection;
 ```
 
 - *Type:* @aws-cdk/aws-ec2.SubnetSelection
-- *Default:* { subnetType: ec2.SubnetType.PRIVATE, }
+- *Default:* {subnetType: ec2.SubnetType.PRIVATE,}
 
 The subnets to associate with the service.
 
@@ -1388,7 +1388,7 @@ public readonly vpcSubnets: SubnetSelection;
 ```
 
 - *Type:* @aws-cdk/aws-ec2.SubnetSelection
-- *Default:* { subnetType: ec2.SubnetType.PRIVATE, }
+- *Default:* {subnetType: ec2.SubnetType.PRIVATE,}
 
 The subnets to associate with the service.
 
@@ -1618,7 +1618,7 @@ public readonly vpcSubnets: SubnetSelection;
 ```
 
 - *Type:* @aws-cdk/aws-ec2.SubnetSelection
-- *Default:* { subnetType: ec2.SubnetType.PRIVATE, }
+- *Default:* {subnetType: ec2.SubnetType.PRIVATE,}
 
 The subnets to associate with the service.
 
@@ -1647,10 +1647,10 @@ const fargateTaskProps: FargateTaskProps = { ... }
 | <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.desiredCount">desiredCount</a></code> | <code>number</code> | desired number of tasks for the service. |
 | <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.external">external</a></code> | <code><a href="#hiii-aws-cdk-utils.LoadBalancerAccessibility">LoadBalancerAccessibility</a></code> | The external ELB listener. |
 | <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.healthCheck">healthCheck</a></code> | <code>@aws-cdk/aws-elasticloadbalancingv2.HealthCheck</code> | health check from elbv2 target group. |
-| <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.healthCheckGracePeriod">healthCheckGracePeriod</a></code> | <code>@aws-cdk/core.Duration</code> | The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. |
+| <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.healthCheckGracePeriod">healthCheckGracePeriod</a></code> | <code>@aws-cdk/core.Duration</code> | The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. |
 | <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.internal">internal</a></code> | <code><a href="#hiii-aws-cdk-utils.LoadBalancerAccessibility">LoadBalancerAccessibility</a></code> | The internal ELB listener. |
-| <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.maxHealthyPercent">maxHealthyPercent</a></code> | <code>number</code> | The maximum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount value, that can run in a service during a deployment. |
-| <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.minHealthyPercent">minHealthyPercent</a></code> | <code>number</code> | The minimum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount value, that must continue to run and remain healthy during a deployment. |
+| <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.maxHealthyPercent">maxHealthyPercent</a></code> | <code>number</code> | The maximum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount value, that can run in a service during a deployment. |
+| <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.minHealthyPercent">minHealthyPercent</a></code> | <code>number</code> | The minimum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount value, that must continue to run and remain healthy during a deployment. |
 | <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.protocol">protocol</a></code> | <code>@aws-cdk/aws-elasticloadbalancingv2.Protocol</code> | The target group protocol for NLB. |
 | <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.protocolVersion">protocolVersion</a></code> | <code>@aws-cdk/aws-elasticloadbalancingv2.ApplicationProtocolVersion</code> | The protocol version to use. |
 | <code><a href="#hiii-aws-cdk-utils.FargateTaskProps.property.scalingPolicy">scalingPolicy</a></code> | <code><a href="#hiii-aws-cdk-utils.ServiceScalingPolicy">ServiceScalingPolicy</a></code> | service autoscaling policy. |
@@ -1752,7 +1752,7 @@ public readonly healthCheckGracePeriod: Duration;
 - *Type:* @aws-cdk/core.Duration
 - *Default:* cdk.Duration.seconds(60),
 
-The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.
+The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.
 
 ---
 
@@ -1778,7 +1778,7 @@ public readonly maxHealthyPercent: number;
 - *Type:* number
 - *Default:* 200
 
-The maximum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount value, that can run in a service during a deployment.
+The maximum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount value, that can run in a service during a deployment.
 
 ---
 
@@ -1791,7 +1791,7 @@ public readonly minHealthyPercent: number;
 - *Type:* number
 - *Default:* 50
 
-The minimum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount value, that must continue to run and remain healthy during a deployment.
+The minimum number of tasks, specified as a percentage of the Amazon ECS service's DesiredCount value, that must continue to run and remain healthy during a deployment.
 
 ---
 
@@ -1867,6 +1867,7 @@ const laravelProps: LaravelProps = { ... }
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.albSecruityGroup">albSecruityGroup</a></code> | <code>@aws-cdk/aws-ec2.ISecurityGroup</code> | The security groups to associate with the Load Balancer. |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.cert">cert</a></code> | <code>@aws-cdk/aws-certificatemanager.ICertificate[]</code> | This is the FargateTaskProps below. |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.cluster">cluster</a></code> | <code>@aws-cdk/aws-ecs.ICluster</code> | Use existing ECS Cluster. |
+| <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.commands">commands</a></code> | <code>string[]</code> | The command that is passed to the container. |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.containerPort">containerPort</a></code> | <code>number</code> | The Laravel container port. |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.db">db</a></code> | <code><a href="#hiii-aws-cdk-utils.RdsService">RdsService</a></code> | *No description.* |
 | <code><a href="#hiii-aws-cdk-utils.LaravelProps.property.deployType">deployType</a></code> | <code>@aws-cdk/aws-ecs.DeploymentControllerType</code> | Set Deployment Type. |
@@ -1946,6 +1947,21 @@ public readonly cluster: ICluster;
 - *Default:* create a new ECS Cluster.
 
 Use existing ECS Cluster.
+
+---
+
+##### `commands`<sup>Optional</sup> <a name="commands" id="hiii-aws-cdk-utils.LaravelProps.property.commands"></a>
+
+```typescript
+public readonly commands: string[];
+```
+
+- *Type:* string[]
+- *Default:* CMD value built into container image.
+
+The command that is passed to the container.
+
+If you provide a shell command as a single string, you have to quote command-line arguments.
 
 ---
 

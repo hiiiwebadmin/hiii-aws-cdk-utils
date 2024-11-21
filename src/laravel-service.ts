@@ -169,7 +169,7 @@ export class LaravelService extends cdk.Construct {
         logGroup,
       }),
       secrets: props.secretEnvironment,
-      command: commands
+      command: commands,
     });
 
     printOutput(this, 'HiiiFromRegistry - ', String(props.fromRegistry));
