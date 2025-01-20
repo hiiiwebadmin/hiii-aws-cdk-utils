@@ -131,6 +131,11 @@ export interface LaravelProps {
      * @default - CMD value built into container image.
      */
   readonly commands?: string[];
+
+  /**
+   * The entry point that is passed to the container.
+   */
+  readonly entryPoint?: string[];
 }
 
 export class LaravelService extends cdk.Construct {
@@ -141,6 +146,7 @@ export class LaravelService extends cdk.Construct {
 
     this.vpc = props.vpc ?? getOrCreateVpc(this);
     const commands = props.commands ?? [];
+    const entryPoint = props.entryPoint ?? [];
     const logGroup = new logs.LogGroup(this, 'LogGroup', {
       logGroupName: props.logGroupName,
       retention: logs.RetentionDays.ONE_MONTH,
@@ -169,6 +175,7 @@ export class LaravelService extends cdk.Construct {
         logGroup,
       }),
       secrets: props.secretEnvironment,
+      entryPoint: entryPoint,
       command: commands,
     });
 
